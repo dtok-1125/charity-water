@@ -1,3 +1,178 @@
+/* Impact Story Section: Use dark text for readability on white background */
+.impact-story {
+  color: #222;
+  background: #FFF7E1;
+  text-align: center; /* Center all text in impact story section */
+  padding: 32px 18px;
+  max-width: 600px;
+  margin: auto;
+  word-break: break-word;
+  font-size: 1.1em;
+  line-height: 1.6;
+  border-radius: 16px;
+/* Responsive improvements for impact story section on mobile */
+@media (max-width: 700px) {
+  .impact-story {
+    padding: 16px 4px;
+    font-size: 1em;
+    max-width: 98vw;
+    border-radius: 10px;
+  }
+  .impact-card, .stats, .quote, .actions {
+    padding: 10px;
+    font-size: 0.98em;
+    border-radius: 10px;
+  }
+  .cta-button {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 8px;
+  }
+}
+}
+
+/* Make impact story section readable on mobile devices */
+@media (max-width: 700px) {
+  .impact-story {
+    padding: 10px;
+    font-size: 1em;
+    max-width: 98vw;
+  }
+  .impact-card, .stats, .quote, .actions {
+    padding: 12px;
+    font-size: 0.95em;
+  }
+  .cta-button {
+    font-size: 1em;
+    padding: 10px;
+  }
+}
+}
+/* Second banner styles - appears right under the first banner */
+.second-banner {
+  width: 100%;
+  background-color: #003366; /* Dark blue as requested */
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: normal;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
+  display: flex;
+  align-items: center;
+  min-height: 90px; /* Set second banner min-height to 90px */
+  padding: 0 48px;
+  margin: 0;
+}
+/* Ripple effect for call-to-action button */
+.cta-main-btn {
+  position: relative;
+  overflow: hidden;
+}
+.cta-main-btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+/* Functioning call-to-action button in banner */
+.banner-cta-btn {
+  margin-left: auto;
+  background: #FED8C1;
+  color: #003366;
+  padding: 8px 18px;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 2px 8px rgba(255, 160, 122, 0.10);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.banner-cta-btn:hover {
+  background: #FF902A;
+  color: #fff;
+}
+/* Functioning call-to-action button in hero section */
+.cta-main-btn {
+  background: #FED8C1;
+  color: #003366;
+  padding: 18px 32px;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-align: center;
+  margin-top: 24px;
+  box-shadow: 0 2px 8px rgba(255, 160, 122, 0.10);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.cta-main-btn:hover {
+  background: #FF902A;
+  color: #fff;
+}
+/* Banner call-to-action box styles */
+.banner-cta {
+  margin-left: auto;
+  background: #FED8C1;
+  color: #003366;
+  padding: 8px 18px;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 2px 8px rgba(255, 160, 122, 0.10);
+  font-family: 'Lato', Arial, Helvetica, sans-serif; /* Use Lato font for CTA */
+  align-items: center;
+  height: 40px;
+}
+/* Banner logo styles */
+.banner-logo {
+  height: 56px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 24px;
+  float: left;
+  display: inline-block;
+}
+/* Call-to-action box in hero section */
+.cta-main-box {
+  background: #FED8C1;
+  color: #000;
+  padding: 18px 32px;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 1.1em;
+  font-family: 'Lato', Arial, Helvetica, sans-serif; /* Use Lato font for banner CTA */
+  margin-top: 24px;
+  box-shadow: 0 2px 8px rgba(255, 160, 122, 0.10);
+  display: inline-block;
+}
+/* Thick top banner styles */
+.top-banner {
+  width: 100%;
+  background-color: #1A1A1A; /* Updated to requested color */
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
+  /* Removed border-radius for straight edges */
+  display: flex;
+  align-items: center;
+  min-height: 96px; /* 20% thinner than original */
+  padding: 0 48px;
+}
 /* charity: water Brand Colors & Fonts
 
 Primary Colors:
@@ -23,13 +198,19 @@ Fonts:
   This CSS uses the provided color palette and beginner-friendly styles.
 */
 
-/* Set up the main font and background color for the whole page */
-body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+/* Basic reset for all elements */
+* {
   margin: 0;
   padding: 0;
-  color: #222;
+  box-sizing: border-box;
+}
+
+/* Set up the main font and background color for the whole page */
+body {
+  /* Use Lato from Google Fonts, with fallbacks */
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  background-color: #77A8BB; /* Updated to light blue background */
+  color: #fff; /* White text */
 }
 
 /* Add a slight shadow and rounded corners to each section for depth */
@@ -41,23 +222,56 @@ section {
   padding: 24px 16px;
 }
 
-/* Hero Section Styles */
-.hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
+/* Header styles */
+header {
+  background: #111; /* Dark background */
+  color: #fff;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+/* Logo text */
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Header call-to-action button */
+.cta-header {
+  background: #FFDCCF; /* Light orange */
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero section styles */
+.hero {
+  /* Layout hero as two columns: text left, image right */
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 0; /* Remove top margin so banner touches hero image */
+  color: #fff;
+  text-align: left;
+  background: none;
+  border-radius: 0 0 16px 16px;
+    .hero-image {
+      width: 50%; /* Make the image take up half the hero section */
+      height: auto;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
+      margin: -80px 0 0 32px; /* Move image up with -80px top margin */
+      padding: 0;
+    }
 }
 
 /* Make the headline bold and modern */
@@ -69,11 +283,23 @@ section {
   text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
 }
 
+/* Subheadline style for hero section */
+.hero .subheadline {
+  font-size: 1.2em;
+  margin-bottom: 24px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
 /* Style the subheadline */
 .hero p {
   font-size: 1.2em;
   margin-top: 0;
   text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  width: 50vw;
+  max-width: 600px;
+  background: rgba(0,0,0,0.3);
+  padding: 32px;
+  border-radius: 16px 0 0 16px;
 }
 
 /* Story Section Styles */
@@ -196,3 +422,6 @@ section {
     width: 300px;
   }
 }
+
+/* Load Typekit fonts */
+@import url("https://use.typekit.net/xxxxxxx.css");

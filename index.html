@@ -1,47 +1,110 @@
+<!--
+  Simple charity: water campus movement landing page
+  Comments explain each section for beginners
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be the Ripple: Ignite the Clean Water Movement on Campus</title>
+  <!-- Link to external CSS file for styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts: Lato -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+  <!-- Thick banner at the top of the website -->
+  <div class="top-banner">
+    <img src="img/charity water logo use.png" alt="Charity Water Logo" class="banner-logo">
+    <button class="banner-cta-btn" onclick="alert('Change Ignited!')">Enter to Ignite Change</button>
+  </div>
+  <!-- Second banner right underneath the first banner -->
+  <div class="second-banner">
+    
+  </div>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
+  <!-- Hero section with main message and button (mountain image removed) -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Be the Ripple: Ignite the Clean Water Movement on Campus</h1>
+      <p>
+        Your voice is powerful. When students rise together, we can drive clean water 
+        solutions, uplift communities, and ignite global change.
+      </p>
+      <button class="cta-main-btn" onclick="alert('Campus Ripple Started!')">START A CAMPUS RIPPLE...</button>
+    </div>
+    <img src="img/charity water use.jpg" alt="Charity Water Hero" class="hero-image">
+  </section>
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
+  <!-- Story Section: This tells the story of the nonprofit -->
+  <section class="story">
+    <h2>Our Story</h2>
+    <p>
+    </p>
+  </section>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+
+  <!-- Real-World Impact Story Section -->
+  <section class="impact-story">
+    <h1>✨ From Drought to Hope: How Students Like You Helped a Village Thrive</h1>
+    <h2>💧 When clean water flows, everything changes—health, education, and opportunity. Your support fuels lasting solutions that ripple far beyond one well.</h2>
+
+    <div class="impact-card">
+      <h3>📍 Rural Ethiopia | 👥 320 People Impacted</h3>
+      <p><strong>Before:</strong></p>
+      <p>🚶 Families walked hours for unsafe water</p>
+      <p>📚 Girls missed school to fetch water</p>
+      <p>🤒 Waterborne diseases spread quickly</p>
+    </div>
+
+    <div class="impact-card stats">
+      <p>✅ <strong>60% more girls in school</strong></p>
+      <p>✅ <strong>Big drop in waterborne illness</strong></p>
+      <p>✅ <strong>Families growing food & shaping community decisions</strong></p>
+    </div>
+
+    <div class="quote">
+      “Now I can go to school every day. I want to be a teacher.”  
+      <br>— Selam, age 13
+    </div>
+
+    <div class="actions">
+      <h3>🌍 How You Can Join</h3>
+      <p>✊ Sign petitions to demand water justice</p>
+      <p>💧 Start a campus fundraiser for wells</p>
+      <p>📢 Join protests for environmental equity</p>
+    </div>
+
+    <a href="#" class="cta-button">👉 Be the Ripple: Take Action Today</a>
+  </section>
+
+  <!-- Call-to-Action Section: This encourages visitors to take action -->
+  <section class="call-to-action">
+    <h2>Make a Difference</h2>
+    <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
+    <a href="#" class="donate-button">Donate Now</a>
+  </section>
 </body>
+<script>
+// Ripple effect for .cta-main-btn
+document.querySelectorAll('.cta-main-btn').forEach(button => {
+  button.addEventListener('mouseenter', function (e) {
+    const circle = document.createElement('span');
+    circle.classList.add('ripple');
+    const rect = button.getBoundingClientRect();
+    circle.style.left = (e.clientX - rect.left) + 'px';
+    circle.style.top = (e.clientY - rect.top) + 'px';
+    circle.style.width = circle.style.height = Math.max(rect.width, rect.height) + 'px';
+    button.appendChild(circle);
+    setTimeout(() => circle.remove(), 600);
+  });
+});
+</script>
 </html>
+
+<style>
+body {
+  font-family: 'proxima-nova', Arial, Helvetica, sans-serif;
+}
+</style>
