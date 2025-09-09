@@ -251,32 +251,45 @@ header {
 /* Hero section styles */
 .hero {
   /* Layout hero as two columns: text left, image right */
-  min-height: 70vh;
+  height: 100vh; /* Fill the viewport for perfect vertical centering */
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: stretch;
+  align-items: stretch;
   position: relative;
-  margin-top: 0; /* Remove top margin so banner touches hero image */
+  margin-top: 0;
   color: #fff;
   text-align: left;
   background: none;
-  border-radius: 0 0 16px 16px;
+  border-radius: 0;
+  padding: 0;
+}
+  background: #222; /* Dark background for text area */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center in the middle of hero section */
+  align-items: center; /* Center content horizontally */
+  padding: 0; /* Remove extra padding for perfect centering */
+  border-radius: 0;
+  text-align: center; /* Center text */
+}
     .hero-image {
-      width: 50%; /* Make the image take up half the hero section */
-      height: auto;
-      object-fit: cover;
-      border-radius: 0;
-      box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
-      margin: -80px 0 0 32px; /* Move image up with -80px top margin */
-      padding: 0;
+  width: 30vw; /* Make hero image smaller for better visibility */
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  align-self: stretch;
     }
 }
 
 /* Make the headline bold and modern */
 .hero h1 {
-  font-size: 2.5em;
+  font-size: 2.8em; /* Make headline font a little bigger */
   font-weight: bold;
   letter-spacing: 1px;
   margin-bottom: 15px;
@@ -292,7 +305,7 @@ header {
 
 /* Style the subheadline */
 .hero p {
-  font-size: 1.2em;
+  font-size: 1.4em; /* Make paragraph font a little bigger */
   margin-top: 0;
   text-shadow: 0 1px 4px rgba(0,0,0,0.12);
   width: 50vw;

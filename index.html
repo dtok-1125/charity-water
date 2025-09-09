@@ -1,110 +1,452 @@
-<!--
-  Simple charity: water campus movement landing page
-  Comments explain each section for beginners
--->
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Be the Ripple: Ignite the Clean Water Movement on Campus</title>
-  <!-- Link to external CSS file for styles -->
-  <link rel="stylesheet" href="styles.css">
-  <!-- Google Fonts: Lato -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <title>Charity: Water - Be the Ripple</title>
+  <!-- Google Fonts: Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Glowing animation for main CTA buttons on hover */
+    @keyframes glow-cta {
+      0% {
+        box-shadow: 0 0 10px 2px #FED8C1, 0 0 20px 4px #fbc02d;
+      }
+      50% {
+        box-shadow: 0 0 30px 8px #FED8C1, 0 0 40px 16px #fbc02d;
+      }
+      100% {
+        box-shadow: 0 0 10px 2px #FED8C1, 0 0 20px 4px #fbc02d;
+      }
+    }
+    /* Glowing animation for call to action buttons */
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px 2px #fdd835, 0 0 20px 4px #fbc02d;
+      }
+      50% {
+        box-shadow: 0 0 30px 8px #fdd835, 0 0 40px 16px #fbc02d;
+      }
+      100% {
+        box-shadow: 0 0 10px 2px #fdd835, 0 0 20px 4px #fbc02d;
+      }
+    }
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+  color: #1A1A1A;
+  background-color: #77A8BB;
+  font-family: 'Open Sans', sans-serif;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    .hero {
+  position: relative;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('img/charity water photo 7.jpeg') no-repeat center center/cover;
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem 0 2rem 4vw;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+  position: relative;
+  max-width: 400px;
+  z-index: 2;
+  margin-top: 10vh;
+    }
+
+    .hero h2 {
+  font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+  background-color: #FED8C1;
+  color: #000;
+  padding: 1.2rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 5vw;
+  bottom: 5vh;
+  z-index: 3;
+    }
+
+    .btn-primary:hover {
+  background-color: #ffb899;
+  animation: glow-cta 1.5s infinite alternate;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+  color: #FFF7E1;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #FFF7E1;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero h2 {
+        font-size: 1.2rem;
+      }
+      .hero p, section p {
+        font-size: 0.9rem;
+      }
+      .btn-primary {
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+        right: 2vw;
+        bottom: 2vh;
+      }
+      .impact-section {
+        padding: 10px;
+        max-width: 98vw;
+      }
+      .card {
+        padding: 10px;
+        margin-bottom: 12px;
+      }
+      .stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .cta-button {
+        font-size: 1rem;
+        padding: 10px;
+      }
+      .story-section h1 {
+        font-size: 1.3rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 1rem;
+      }
+      .btn-primary {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+      }
+      .impact-section {
+        padding: 4px;
+      }
+      .card {
+        padding: 6px;
+      }
+      .cta-button {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+      .story-section h1 {
+        font-size: 1rem;
+      }
+      /* Make banner full width and remove left margin for mobile */
+      div[style*="background:#1A1A1A"] {
+        width: 100vw !important;
+        margin: 0 !important;
+        left: 0 !important;
+        padding: 6px 0 6px 0 !important;
+        font-size: 1rem !important;
+        height: 60px !important;
+      }
+      section, .impact-section {
+        max-width: 100vw !important;
+        padding: 0 4px !important;
+      }
+      .card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Thick banner at the top of the website -->
-  <div class="top-banner">
-    <img src="img/charity water logo use.png" alt="Charity Water Logo" class="banner-logo">
-    <button class="banner-cta-btn" onclick="alert('Change Ignited!')">Enter to Ignite Change</button>
+  <!-- Top banner -->
+  <div style="width:100%;background:#1A1A1A;color:#fff;height:90px;padding:12px 0 12px 0;margin:0;display:flex;align-items:center;justify-content:space-between;font-size:1.3rem;font-family:'Open Sans',sans-serif;position:fixed;top:0;left:0;z-index:100;">
+  <img src="img/charity water logo use.png" alt="Charity Water Logo" style="height:48px;vertical-align:middle;font-family:'Open Sans',sans-serif;margin-left:24px;"> 
+  <div style="display:flex;align-items:center;gap:8px;margin-right:32px;">
+    <button class="btn-primary" style="padding:0.6rem 1.2rem;font-size:1rem;background-color:#FED8C1;color:#1A1A1A;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">Enter to Ignite Change</button>
+    <img src="img/water-can-transparent.png" alt="Water Can" style="height:40px;">
   </div>
-  <!-- Second banner right underneath the first banner -->
-  <div class="second-banner">
-    
   </div>
 
-  <!-- Hero section with main message and button (mountain image removed) -->
+  <header>
+  </header>
+
   <section class="hero">
     <div class="hero-content">
-      <h1>Be the Ripple: Ignite the Clean Water Movement on Campus</h1>
-      <p>
-        Your voice is powerful. When students rise together, we can drive clean water 
-        solutions, uplift communities, and ignite global change.
+      <h2>Be the Ripple: Ignite the Clean Water Movement on Campus</h2>
+      <p>Your voice is powerful. When students rise together, we can drive clean water solutions, uplift communities, and ignite global change.</p>
+    </div>
+    <button class="btn-primary" style="background-color:#FED8C1;color:#1A1A1A;">START A CAMPUS<br>💧RIPPLE💧</button>
+  </section>
+
+  <section id="story">
+    <section class="story-section">
+  <h1 style="text-align:center;font-size:2.2rem;color:#1A1A1A;"><span style="font-size:2.2rem;vertical-align:middle;">💧</span> Our Story <span style="font-size:2.2rem;vertical-align:middle;">💧</span></h1>
+      <p style="text-align:center;font-size:1.3rem;color:#1A1A1A;">
+    charity: water is on a mission to bring clean and safe drinking water to people 
+        in developing countries. By empowering students and young leaders, we create 
+        ripples of change that transform communities around the world.
       </p>
-      <button class="cta-main-btn" onclick="alert('Campus Ripple Started!')">START A CAMPUS RIPPLE...</button>
-    </div>
-    <img src="img/charity water use.jpg" alt="Charity Water Hero" class="hero-image">
+      <p style="text-align:center;font-size:1.3rem;color:#1A1A1A;">
+        Every well built, every tap installed, and every student-led campaign fuels a future 
+        where no one has to drink dirty water. Together, we can end the water crisis in our lifetime.
+      </p>
+      <!-- Reduce bottom margin -->
+      <style>
+        .story-section { margin-bottom: 10px !important; }
+      </style>
+    </section>
   </section>
 
-  <!-- Story Section: This tells the story of the nonprofit -->
-  <section class="story">
-    <h2>Our Story</h2>
-    <p>
-    </p>
-  </section>
+  <div style="width:100%;text-align:center;margin:24px 0;">
+  <img src="img/Uganda_2021_CG-3679.jpg" alt="Uganda 2021" style="max-width:1000px;width:100%;height:auto;border-radius:12px;">
+  </div>
 
+  <section id="impact">
+  
+  <section class="impact-section">
+    <h1>🌎 Real Impact of the Campus Clean Water Movement</h1>
+    <h2>💧 Your voice, your action, your donations—together they create measurable change. See how student power transformed a community.</h2>
 
-  <!-- Real-World Impact Story Section -->
-  <section class="impact-story">
-    <h1>✨ From Drought to Hope: How Students Like You Helped a Village Thrive</h1>
-    <h2>💧 When clean water flows, everything changes—health, education, and opportunity. Your support fuels lasting solutions that ripple far beyond one well.</h2>
-
-    <div class="impact-card">
-      <h3>📍 Rural Ethiopia | 👥 320 People Impacted</h3>
-      <p><strong>Before:</strong></p>
-      <p>🚶 Families walked hours for unsafe water</p>
-      <p>📚 Girls missed school to fetch water</p>
-      <p>🤒 Waterborne diseases spread quickly</p>
+    <div class="card">
+      <h3>📝 Context</h3>
+  <p style="color:#1A1A1A;">Northern Uganda is rebounding after two decades of civil war that displaced 1.6 million people—80% of them women and children. Today, clean water projects are improving health, reducing the time spent walking for water, and strengthening communities searching for stability and hope.</p>
     </div>
 
-    <div class="impact-card stats">
-      <p>✅ <strong>60% more girls in school</strong></p>
-      <p>✅ <strong>Big drop in waterborne illness</strong></p>
-      <p>✅ <strong>Families growing food & shaping community decisions</strong></p>
+    <div class="card">
+      <h3>🚀 Our Work in Uganda</h3>
+      <div class="stats">
+        <div class="stat-box">
+          <span>👥</span>
+          <strong>610,500+</strong>
+          People Served
+        </div>
+        <div class="stat-box">
+          <span>🏗️</span>
+          <strong>1,853</strong>
+          Projects Funded
+        </div>
+        <div class="stat-box">
+          <span>💸</span>
+          <strong>$16.9M</strong>
+          Invested
+        </div>
+        <div class="stat-box">
+          <span>📅</span>
+          <strong>Since 2006</strong>
+          Active in Uganda
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+    <h3>🇺🇬 About Uganda</h3>
+  <p style="color:#1A1A1A;">
+        <span>🌍</span> <strong>39M+</strong> people call Uganda home, yet
+        <span>🚱</span> <strong>67% of rural families</strong> lack access to clean water and
+        <span>🚽</span> <strong>82%</strong> lack sanitation. With support from students and donors, charity: water is helping close this gap.
+      </p>
+    </div>
+
+    <div class="highlight">
+      <div style="background-color:#FFC907;padding:1em;border-radius:10px;text-align:center;font-size:1.2em;margin:0.5em 0;color:#1A1A1A;">
+        <span>🙌</span>
+        Together, students and young leaders are proving that clean water isn’t just about survival—it’s about rebuilding futures. Every campaign and donation fuels Uganda’s journey from recovery to resilience.
+      </div>
     </div>
 
     <div class="quote">
-      “Now I can go to school every day. I want to be a teacher.”  
-      <br>— Selam, age 13
+    <span></span>
+      “Clean water gave us the strength to come back home and start again.”  <br>— Community Member, Northern Uganda
     </div>
 
-    <div class="actions">
-      <h3>🌍 How You Can Join</h3>
-      <p>✊ Sign petitions to demand water justice</p>
-      <p>💧 Start a campus fundraiser for wells</p>
-      <p>📢 Join protests for environmental equity</p>
-    </div>
+    <a href="#" class="cta-button">🌊 Be the Ripple: Take Action Today</a>
+  </section>
+  <style>
+    .impact-section {
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
 
-    <a href="#" class="cta-button">👉 Be the Ripple: Take Action Today</a>
+    .impact-section h1 {
+      font-size: 2rem;
+  color: #1A1A1A;
+      margin-bottom: 12px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .impact-section h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+  color: #1A1A1A;
+      margin-bottom: 28px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+  color: #003366;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .stat-box {
+  background: #FFC907;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      font-size: 1.08rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 1.3rem;
+      color: #0077b6;
+      margin-bottom: 2px;
+    }
+
+    .highlight {
+      background: #fff9c4;
+      border-left: 5px solid #fdd835;
+      padding: 16px;
+      border-radius: 12px;
+      margin: 20px 0;
+      font-weight: 500;
+      font-size: 1.08rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .quote {
+      font-style: italic;
+      background: #f1f5f9;
+      padding: 16px;
+      border-left: 4px solid #0077b6;
+      border-radius: 8px;
+      margin: 24px 0;
+      font-size: 1rem;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cta-button {
+      display: block;
+      width: 100%;
+      background: #fdd835;
+      color: #111;
+      text-align: center;
+      padding: 16px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 12px;
+      margin-top: 22px;
+      text-decoration: none;
+      line-height: 1.4;
+      transition: all 0.3s ease;
+  animation: glow 1.5s infinite alternate;
+    }
+
+    .cta-button:hover {
+      background: #fbc02d;
+  box-shadow: 0 0 30px 8px #fdd835, 0 0 40px 16px #fbc02d;
+    }
+
+    @media (max-width: 600px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
   </section>
 
-  <!-- Call-to-Action Section: This encourages visitors to take action -->
-  <section class="call-to-action">
-    <h2>Make a Difference</h2>
-    <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-    <a href="#" class="donate-button">Donate Now</a>
-  </section>
 </body>
-<script>
-// Ripple effect for .cta-main-btn
-document.querySelectorAll('.cta-main-btn').forEach(button => {
-  button.addEventListener('mouseenter', function (e) {
-    const circle = document.createElement('span');
-    circle.classList.add('ripple');
-    const rect = button.getBoundingClientRect();
-    circle.style.left = (e.clientX - rect.left) + 'px';
-    circle.style.top = (e.clientY - rect.top) + 'px';
-    circle.style.width = circle.style.height = Math.max(rect.width, rect.height) + 'px';
-    button.appendChild(circle);
-    setTimeout(() => circle.remove(), 600);
-  });
-});
-</script>
 </html>
-
-<style>
-body {
-  font-family: 'proxima-nova', Arial, Helvetica, sans-serif;
-}
-</style>
