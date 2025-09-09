@@ -116,11 +116,14 @@
   right: 5vw;
   bottom: 5vh;
   z-index: 3;
+  transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .btn-primary:hover {
   background-color: #ffb899;
   animation: glow-cta 1.5s infinite alternate;
+  transform: scale(1.07) translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
     }
 
     section {
@@ -408,8 +411,13 @@
       align-items: center;
       justify-content: center;
       gap: 4px;
+   transition: transform 0.2s, box-shadow 0.2s;
     }
 
+.stat-box:hover {
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
     .stat-box strong {
       display: block;
       font-size: 1.3rem;
